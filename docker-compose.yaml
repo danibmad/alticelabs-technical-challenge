@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./labseq-api-quarkus
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      - QUARKUS_HTTP_CORS=true
+      - QUARKUS_HTTP_CORS_ORIGINS=http://localhost:4200,http://frontend
+      - QUARKUS_HTTP_CORS_METHODS=GET,POST
+    networks:
+      - labseq-network
+
+  frontend:
+    build:
+      context: ./labseq-frontend
+      dockerfile: Dockerfile
+    container_name: labseq-frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - labseq-network
+
+
+networks:
+  labseq-network:
+    driver: bridge
