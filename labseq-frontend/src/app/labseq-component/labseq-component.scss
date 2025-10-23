@@ -1,0 +1,45 @@
+@import '../app.scss';
+
+input {
+  height: 42px;
+  width: 80px;
+  margin-right: 10px;
+
+  padding: 4px 8px;
+
+  background-color: $secondary-color;
+  opacity: 50%;
+
+  border-radius: 10px;
+  border: 4px solid $tertiary-color;
+  color: $tertiary-color;
+}
+input:focus {
+  outline: none;
+  background-color: $secondary-color;
+  opacity: 75%;
+}
+button {
+  height: 42px;
+  padding: 4px 8px;
+  cursor: pointer;
+
+  background-color: $primary-color;
+  opacity: 50%;
+
+  color: $secondary-color;
+
+  border-radius: 10px;
+  border: 4px solid $tertiary-color;
+}
+
+button:active {
+  padding: 4px 8px;
+  cursor: pointer;
+
+  background-color: $accent-color;
+  opacity: 50%;
+
+  border-radius: 10px;
+  border: 4px solid $tertiary-color;
+}
