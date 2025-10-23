@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LabseqComponent } from './labseq-component/labseq-component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, LabseqComponent, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
