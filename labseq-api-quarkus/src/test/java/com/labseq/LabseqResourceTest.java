@@ -9,12 +9,11 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 class LabseqResourceTest {
     @Test
-    void testHelloEndpoint() {
+    void testEndpoint() {
         given()
-          .when().get("/labseq")
+          .when().get("/labseq/3")
           .then()
-             .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .statusCode(200);
     }
 
 }

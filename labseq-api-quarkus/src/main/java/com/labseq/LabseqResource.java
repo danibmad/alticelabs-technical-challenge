@@ -14,8 +14,9 @@ public class LabseqResource {
 
     @GET
     @Path("/{n}")
-    public BigInteger getLabseq(@PathParam("n") long n)
+    public String getLabseq(@PathParam("n") long n)
     {
-        return service.calculateLabseq(n);
+        BigInteger result = service.calculateLabseq(n);
+        return result.toString();
     }
 }
