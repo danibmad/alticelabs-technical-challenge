@@ -4,6 +4,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import java.math.BigInteger;
 
 @Path("/labseq")
 public class LabseqResource {
@@ -13,7 +14,7 @@ public class LabseqResource {
 
     @GET
     @Path("/{n}")
-    public long getLabseq(@PathParam("n") long n)
+    public BigInteger getLabseq(@PathParam("n") long n)
     {
         return service.calculateLabseq(n);
     }
